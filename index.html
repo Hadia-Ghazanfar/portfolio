@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hadia Ghazanfar — FinTech Student & Web Builder</title>
+<meta name="description" content="Hadia Ghazanfar builds free web tools people actually use. FinTech student at FAST Lahore. Available for freelance web development, SEO audits and digital marketing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F6F1E7; --ink:#151515; --orange:#FF6B1A; --orange-soft:#FFE3D1;
+    --white:#FFFFFF; --muted:#6B6560; --card:#FFFFFF; --line:#E9E0D2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+
+  /* NAV */
+  nav{position:sticky;top:16px;z-index:50}
+  .nav-pill{display:flex;align-items:center;justify-content:space-between;background:var(--white);border:1px solid var(--line);border-radius:999px;padding:10px 10px 10px 22px;box-shadow:0 8px 24px rgba(21,21,21,.06)}
+  .logo{font-weight:800;font-size:20px;letter-spacing:-.5px}
+  .logo span{color:var(--orange)}
+  .nav-links{display:flex;gap:28px;font-weight:600;font-size:15px}
+  .nav-links a{opacity:.75;transition:.2s}
+  .nav-links a:hover{opacity:1;color:var(--orange)}
+  .btn{display:inline-block;background:var(--ink);color:#fff;font-weight:700;padding:13px 28px;border-radius:999px;transition:.2s;border:2px solid var(--ink)}
+  .btn:hover{background:var(--orange);border-color:var(--orange);transform:translateY(-2px)}
+  .btn-orange{background:var(--orange);border-color:var(--orange)}
+  .btn-orange:hover{background:var(--ink);border-color:var(--ink)}
+  .btn-ghost{background:transparent;color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:#fff}
+  @media(max-width:760px){.nav-links{display:none}}
+
+  /* HERO */
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:84px 0 60px}
+  @media(max-width:900px){.hero{grid-template-columns:1fr;padding:56px 0 40px}}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:13px;font-weight:700;letter-spacing:.4px}
+  .dot{width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.18)}
+  h1{font-size:clamp(44px,6vw,76px);line-height:1.02;letter-spacing:-2.5px;font-weight:800;margin:22px 0 16px}
+  h1 .hl{color:var(--orange)}
+  .sub{font-size:19px;color:var(--muted);line-height:1.6;max-width:480px}
+  .cta-row{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+  .stats{display:flex;gap:36px;margin-top:44px;flex-wrap:wrap}
+  .stat b{font-size:30px;letter-spacing:-1px;display:block}
+  .stat span{font-size:13px;color:var(--muted);font-weight:600}
+
+  .photo-stage{position:relative;display:flex;justify-content:center}
+  .halo{position:absolute;width:min(420px,86%);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%, #FFB37E, var(--orange) 70%);top:6%;filter:saturate(1.05)}
+  .photo-stage img{position:relative;width:min(360px,74%);aspect-ratio:3/3.4;object-fit:cover;object-position:top;border-radius:46% 46% 42% 42%/38% 38% 46% 46%;border:6px solid var(--white);box-shadow:0 30px 60px rgba(21,21,21,.16);background:#fff}
+  .stamp{position:absolute;right:6%;top:8%;width:104px;height:104px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;font-weight:800;line-height:1.35;padding:12px;transform:rotate(12deg);animation:spin 14s linear infinite}
+  @keyframes spin{to{transform:rotate(372deg)}}
+  .squiggle{position:absolute;left:2%;bottom:6%;width:120px;opacity:.9}
+
+  /* TICKER */
+  .ticker{background:var(--ink);color:#fff;overflow:hidden;white-space:nowrap;padding:16px 0;transform:rotate(-1deg);margin:30px -10px}
+  .ticker-track{display:inline-block;animation:tick 22s linear infinite;font-weight:800;letter-spacing:2px;font-size:15px}
+  .ticker-track span{margin:0 22px}
+  .ticker-track .o{color:var(--orange)}
+  @keyframes tick{to{transform:translateX(-50%)}}
+
+  /* SECTIONS */
+  section{padding:72px 0}
+  .eyebrow{display:inline-block;background:var(--ink);color:#fff;font-size:12px;font-weight:800;letter-spacing:2.5px;padding:8px 18px;border-radius:999px;margin-bottom:18px}
+  h2{font-size:clamp(32px,4vw,48px);letter-spacing:-1.5px;font-weight:800;margin-bottom:14px}
+  .lead{color:var(--muted);font-size:17px;max-width:620px;line-height:1.65}
+
+  /* PROJECTS */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:36px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:30px;transition:.25s;position:relative;overflow:hidden}
+  .card:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(21,21,21,.10);border-color:var(--orange)}
+  .card .tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:1.5px;color:var(--orange);background:var(--orange-soft);padding:6px 14px;border-radius:999px;margin-bottom:14px}
+  .card h3{font-size:24px;letter-spacing:-.5px;margin-bottom:10px}
+  .card p{color:var(--muted);line-height:1.65;font-size:15.5px;margin-bottom:18px}
+  .card .meta{display:flex;justify-content:space-between;align-items:center}
+  .card .date{font-size:13px;font-weight:700;color:var(--muted)}
+  .visit{font-weight:800;color:var(--ink)}
+  .visit:hover{color:var(--orange)}
+  .card::after{content:"";position:absolute;top:-40px;right:-40px;width:130px;height:130px;border-radius:50%;background:var(--orange-soft);opacity:.55}
+
+  /* SERVICES */
+  .acc{margin-top:34px;border-top:2px solid var(--ink)}
+  .acc-item{border-bottom:2px solid var(--ink)}
+  .acc-head{display:flex;align-items:center;gap:22px;padding:26px 6px;cursor:pointer;user-select:none}
+  .num{font-weight:800;color:var(--orange);font-size:15px;letter-spacing:1px;min-width:44px}
+  .acc-head h3{font-size:clamp(20px,2.6vw,28px);letter-spacing:-.5px;flex:1}
+  .price{font-weight:800;background:var(--ink);color:#fff;font-size:13px;padding:8px 16px;border-radius:999px;white-space:nowrap}
+  .arrow{width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;transition:.25s;flex-shrink:0}
+  .acc-item.open .arrow{background:var(--orange);border-color:var(--orange);color:#fff;transform:rotate(45deg)}
+  .acc-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .acc-body-inner{padding:0 6px 30px 66px;color:var(--muted);line-height:1.7;font-size:16px;max-width:760px}
+  .acc-body-inner ul{margin:12px 0 0 18px}
+  .acc-body-inner li{margin-bottom:8px}
+  .acc-body-inner b{color:var(--ink)}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr}}
+  .panel{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:30px}
+  .panel h3{font-size:20px;margin-bottom:16px;letter-spacing:-.3px}
+  .edu{margin-bottom:18px}
+  .edu b{display:block;font-size:16px}
+  .edu span{color:var(--muted);font-size:14px}
+  .pills{display:flex;flex-wrap:wrap;gap:10px}
+  .pill{background:var(--cream);border:1px solid var(--line);padding:9px 18px;border-radius:999px;font-size:14px;font-weight:700}
+  .pill.hot{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+  /* CONTACT */
+  .contact-card{background:var(--ink);color:#fff;border-radius:32px;padding:clamp(36px,6vw,72px);text-align:center;position:relative;overflow:hidden}
+  .contact-card::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,#FF6B1A55,transparent 70%);top:-160px;right:-120px}
+  .contact-card h2{color:#fff}
+  .contact-card p{color:#CFC9BE;max-width:520px;margin:0 auto 30px;line-height:1.7}
+  .contact-card .btn{background:var(--orange);border-color:var(--orange)}
+  .contact-card .btn:hover{background:#fff;border-color:#fff;color:var(--ink)}
+
+  footer{padding:34px 0 44px;color:var(--muted);font-size:14px;text-align:center}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <div class="nav-pill">
+    <a class="logo" href="#top">hadia<span>.</span></a>
+    <div class="nav-links">
+      <a href="#projects">Projects</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a>
+    </div>
+    <a class="btn" href="#contact">Hire Me</a>
+  </div>
+</div></nav>
+
+<header class="hero wrap" id="top">
+  <div>
+    <span class="badge"><span class="dot"></span> AVAILABLE FOR FREELANCE PROJECTS</span>
+    <h1>I'm Hadia Ghazanfar.<br>I build <span class="hl">web tools</span> people actually use.</h1>
+    <p class="sub">FinTech student at FAST Lahore. I've shipped 4 products and 60+ free web tools — every one live, no sign-ups, no fluff. Now I build for clients too.</p>
+    <div class="cta-row">
+      <a class="btn btn-orange" href="#projects">View Projects</a>
+      <a class="btn btn-ghost" href="#contact">Hire Me →</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>4</b><span>Products shipped</span></div>
+      <div class="stat"><b>60+</b><span>Free web tools live</span></div>
+      <div class="stat"><b>100%</b><span>Free, no sign-ups</span></div>
+    </div>
+  </div>
+  <div class="photo-stage">
+    <div class="halo"></div>
+    <img src="photo.png" alt="Hadia Ghazanfar">
+    <div class="stamp">OPEN TO<br>PROJECTS<br>✦</div>
+    <svg class="squiggle" viewBox="0 0 120 40" fill="none"><path d="M4 30 C 30 4, 60 36, 90 10 S 110 20, 116 14" stroke="#FF6B1A" stroke-width="5" stroke-linecap="round"/></svg>
+  </div>
+</header>
+
+<div class="ticker"><div class="ticker-track" id="ticker"></div></div>
+
+<section id="projects"><div class="wrap">
+  <span class="eyebrow">SELECTED WORK</span>
+  <h2>Projects that are live<br>right now.</h2>
+  <p class="lead">No mockups, no "coming soon" — every project below is deployed and used by real people.</p>
+  <div class="grid">
+    <div class="card">
+      <span class="tag">FULL APP</span>
+      <h3>Daybill</h3>
+      <p>Invoicing app for small shops: live invoice preview, inventory auto-tracking, supplier purchase orders, sales dashboard, one-tap PDF, WhatsApp sharing, Urdu support, works offline as a PWA.</p>
+      <div class="meta"><span class="date">2026 — Present</span><span class="visit">Case study on request →</span></div>
+    </div>
+    <div class="card">
+      <span class="tag">WEB TOOL</span>
+      <h3>FreeBillKit</h3>
+      <p>12 free billing-document generators — invoices, receipts, quotes, purchase orders — with live preview and one-click watermark-free PDF. No signup, runs entirely in the browser.</p>
+      <div class="meta"><span class="date">Jul 2026 — Present</span><a class="visit" href="https://freebillkit.com" target="_blank" rel="noopener">Visit live →</a></div>
+    </div>
+    <div class="card">
+      <span class="tag">WEB TOOL</span>
+      <h3>DateAndUnits</h3>
+      <p>24 free browser-based date calculators and unit converters. No accounts, no signup — everything runs client-side, loads instantly.</p>
+      <div class="meta"><span class="date">Aug 2026 — Present</span><a class="visit" href="https://dateandunits.com" target="_blank" rel="noopener">Visit live →</a></div>
+    </div>
+    <div class="card">
+      <span class="tag">WEB TOOL</span>
+      <h3>AgoCalc</h3>
+      <p>38 free browser-based date and time calculators. Built for speed and simplicity — open, calculate, done.</p>
+      <div class="meta"><span class="date">Sep 2026 — Present</span><a class="visit" href="https://agocalc.com" target="_blank" rel="noopener">Visit live →</a></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="services"><div class="wrap">
+  <span class="eyebrow">SERVICES</span>
+  <h2>What I can do<br>for you.</h2>
+  <p class="lead">Fixed-price, clearly scoped, delivered fast. Every engagement starts with a free scoping call.</p>
+  <div class="acc">
+    <div class="acc-item open">
+      <div class="acc-head"><span class="num">01</span><h3>Web Development</h3><span class="price">from $50</span><span class="arrow">+</span></div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <b>Landing pages, business websites, bug fixes and speed optimization.</b>
+        <ul><li>Responsive, mobile-first builds that load fast</li><li>Bug fixes &amp; performance tuning on existing sites</li><li>Contact forms, maps, WhatsApp integrations</li><li>Deployed live with a plain-English handover note</li></ul>
+      </div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-head"><span class="num">02</span><h3>SEO Audits</h3><span class="price">from $50</span><span class="arrow">+</span></div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <b>A prioritized fix-list ordered by impact — not a 40-page PDF you'll never read.</b>
+        <ul><li>Technical health: speed, mobile, crawl &amp; index issues</li><li>On-page: titles, meta descriptions, headings, internal links</li><li>Keyword gaps vs. your competitors</li><li>Report + 15-min walkthrough call within 5 days</li></ul>
+      </div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-head"><span class="num">03</span><h3>Digital Marketing</h3><span class="price">let's talk</span><span class="arrow">+</span></div>
+      <div class="acc-body"><div class="acc-body-inner">
+        <b>Content and social that gets small businesses found.</b>
+        <ul><li>Keyword research &amp; content planning</li><li>Social media setup and content calendars</li><li>Google Business Profile optimization</li></ul>
+      </div></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <span class="eyebrow">ABOUT</span>
+  <h2>Student by degree,<br>builder by habit.</h2>
+  <p class="lead">I'm a Financial Technologies undergraduate at FAST (NUCES), Lahore. I learn best by shipping — so while studying finance, I've been building real products people use, and training in digital marketing so good products get found.</p>
+  <div class="about-grid">
+    <div class="panel">
+      <h3>🎓 Education</h3>
+      <div class="edu"><b>BS Financial Technologies (FinTech)</b><span>FAST School of Management, Lahore — 2025–2029</span></div>
+      <div class="edu"><b>Digital Marketing Program</b><span>iSkills — SEO, content, freelancing — 2024</span></div>
+      <div class="edu"><b>FSc Computer Science</b><span>Pak Turk Maarif — 2023–2025</span></div>
+    </div>
+    <div class="panel">
+      <h3>🛠 Skills</h3>
+      <div class="pills">
+        <span class="pill hot">Web Development</span><span class="pill hot">SEO</span>
+        <span class="pill">Digital Marketing</span><span class="pill">Content Strategy</span>
+        <span class="pill">Copywriting</span><span class="pill">FinTech</span>
+        <span class="pill">Product Development</span><span class="pill">Data Analysis</span>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="contact-card">
+    <span class="eyebrow" style="background:#FF6B1A">CONTACT</span>
+    <h2>Have a project in mind?</h2>
+    <p>Tell me what you're trying to build or fix. I'll reply with honest scope, a fixed price, and a timeline — no pushy sales talk.</p>
+    <a class="btn" href="https://www.linkedin.com/in/hadia-ghazanfar" target="_blank" rel="noopener">Let's connect on LinkedIn →</a>
+  </div>
+</div></section>
+
+<footer>© 2026 Hadia Ghazanfar — Built with care in Lahore.</footer>
+
+<script>
+  // ticker
+  const words = ["WEB DEVELOPMENT","SEO","DIGITAL MARKETING","FINTECH","LANDING PAGES","SITE AUDITS"];
+  const seq = words.map(w=>`<span>${w}</span><span class="o">✦</span>`).join("");
+  document.getElementById('ticker').innerHTML = seq + seq;
+  // accordion
+  document.querySelectorAll('.acc-item').forEach(item=>{
+    const head = item.querySelector('.acc-head'), body = item.querySelector('.acc-body');
+    if(item.classList.contains('open')) body.style.maxHeight = body.scrollHeight + "px";
+    head.addEventListener('click', ()=>{
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.acc-item').forEach(i=>{i.classList.remove('open');i.querySelector('.acc-body').style.maxHeight=null});
+      if(!isOpen){item.classList.add('open');body.style.maxHeight = body.scrollHeight + "px"}
+    });
+  });
+</script>
+</body>
+</html>
