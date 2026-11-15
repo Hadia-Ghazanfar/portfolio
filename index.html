@@ -36,7 +36,7 @@
   @media(max-width:760px){.nav-links{display:none}}
 
   /* HERO */
-  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:84px 0 60px}
+  .hero{text-align:center;padding:84px 0 60px}
   @media(max-width:900px){
     .hero{grid-template-columns:1fr;padding:48px 0 36px;gap:8px}
     .hero>div:first-child{padding:0 10px}
@@ -48,9 +48,9 @@
   .dot{width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.18)}
   h1{font-size:clamp(44px,6vw,76px);line-height:1.02;letter-spacing:-2.5px;font-weight:800;margin:22px 0 16px}
   h1 .hl{color:var(--orange)}
-  .sub{font-size:19px;color:var(--muted);line-height:1.6;max-width:480px}
-  .cta-row{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
-  .stats{display:flex;gap:36px;margin-top:44px;flex-wrap:wrap}
+  .sub{font-size:19px;color:var(--muted);line-height:1.6;max-width:560px;margin:0 auto}
+  .cta-row{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap;justify-content:center}
+  .stats{display:flex;gap:36px;margin-top:44px;flex-wrap:wrap;justify-content:center}
   .stat b{font-size:30px;letter-spacing:-1px;display:block}
   .stat span{font-size:13px;color:var(--muted);font-weight:600}
 
@@ -160,12 +160,6 @@
       <div class="stat"><b>60+</b><span>Free web tools live</span></div>
       <div class="stat"><b>100%</b><span>Free, no sign-ups</span></div>
     </div>
-  </div>
-  <div class="photo-stage">
-    <div class="halo"></div>
-    <img src="photo.png" alt="Hadia Ghazanfar">
-    <div class="stamp">OPEN TO<br>PROJECTS<br>✦</div>
-    <svg class="squiggle" viewBox="0 0 120 40" fill="none"><path d="M4 30 C 30 4, 60 36, 90 10 S 110 20, 116 14" stroke="#FF6B1A" stroke-width="5" stroke-linecap="round"/></svg>
   </div>
 </header>
 
